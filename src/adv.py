@@ -1,7 +1,6 @@
 from room import Room
 
 # Declare all the rooms
-
 room = {
     'outside':  Room("Outside Cave Entrance",
                      "North of you, the cave mount beckons"),
@@ -23,7 +22,6 @@ earlier adventurers. The only exit is to the south."""),
 
 
 # Link rooms together
-
 room['outside'].n_to = room['foyer']
 room['foyer'].s_to = room['outside']
 room['foyer'].n_to = room['overlook']
@@ -39,13 +37,21 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 
-# Write a loop that:
-#
-# * Prints the current room name
-# * Prints the current description (the textwrap module might be useful here).
-# * Waits for user input and decides what to do.
-#
-# If the user enters a cardinal direction, attempt to move to the room there.
-# Print an error message if the movement isn't allowed.
-#
-# If the user enters "q", quit the game.
+while True:
+    # Prints the current room name
+    # Prints the current description (the textwrap module might be useful here).
+
+    # Waits for user input and decides what to do.
+    userInput = input().lower()
+
+    # If the user enters "q", quit the game.
+    if userInput == "q":
+        print("Qutting game...")
+        exit()
+
+    # If the user enters a cardinal direction, attempt to move to the room there.
+    if userInput == "n" or userInput == "s" or userInput == "e" or userInput == "w":
+        pass
+    else:
+        # Print an error message if the movement isn't allowed.
+        print("Please enter a valid cardinal direction")
