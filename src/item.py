@@ -8,3 +8,6 @@ class Item:
 
     def __repr__(self):
         return f"Item name:({repr(self.name)}), description:({repr(self.description)})"
+
+    def item_name(self):
+        return {self.name}
