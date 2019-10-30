@@ -22,3 +22,6 @@ class Room:
 
     def __repr__(self):
         return f"Room name:({repr(self.name)}), description:({repr(self.description)})"
+
+    def add_room_item(self, item):
+        return self.items.append(item)

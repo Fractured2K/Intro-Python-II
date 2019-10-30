@@ -13,3 +13,6 @@ class Player:
 
     def __repr__(self):
         return f"Player name:({repr(self.name)}), current room:({repr(self.current_room)})"
+
+    def add_inventory_item(self, item):
+        return self.inventory.append(item)
