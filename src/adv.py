@@ -36,6 +36,11 @@ room['narrow'].w_to = room['foyer']
 room['narrow'].n_to = room['treasure']
 room['treasure'].s_to = room['narrow']
 
+# Add items to rooms
+room["foyer"].add_room_item(["Book", "Map"])
+room["overlook"].add_room_item(["Flare", "Stick", "Parachute"])
+room["narrow"].add_room_item(["Lead"])
+
 clear_screen()
 player_name = input("Enter player name: ")
 current_room = room['outside']
