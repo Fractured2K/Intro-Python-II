@@ -38,9 +38,15 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 
+# Ask for player name
+player_name = input("Enter a player name: ")
+current_room = room['outside']
+
+player = Player(player_name, current_room)
 
 while True:
     # Prints the current room name
+    print(player.current_room)
     # Prints the current description (the textwrap module might be useful here).
 
     # Waits for user input and decides what to do.
