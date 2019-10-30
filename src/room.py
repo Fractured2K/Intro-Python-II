@@ -12,7 +12,7 @@ class Room:
         self.w_to = ''
 
     def __str__(self):
-        return f"Room: {self.name}\nDescription: {self.description}"
+        return f"\n{self.name}\n{self.description}"
 
     def __repr__(self):
         return f"Room name:({repr(self.name)}), description:({repr(self.description)})"
