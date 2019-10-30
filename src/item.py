@@ -11,3 +11,6 @@ class Item:
 
     def item_name(self):
         return {self.name}
+
+    def item_description(self):
+        return {self.description}
