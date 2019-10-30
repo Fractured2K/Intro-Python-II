@@ -32,22 +32,17 @@ room['narrow'].w_to = room['foyer']
 room['narrow'].n_to = room['treasure']
 room['treasure'].s_to = room['narrow']
 
-#
-# Main
-#
-
-# Make a new player object that is currently in the 'outside' room.
-
 # Ask for player name
 player_name = input("Enter a player name: ")
 current_room = room['outside']
 
 player = Player(player_name, current_room)
 
+
 while True:
     # Prints the current room name
-    print(player.current_room)
-    # Prints the current description (the textwrap module might be useful here).
+    # Prints the current description.
+    print("Current", player.current_room)
 
     # Waits for user input and decides what to do.
     userInput = input().lower()
@@ -59,7 +54,24 @@ while True:
 
     # If the user enters a cardinal direction, attempt to move to the room there.
     if userInput == "n" or userInput == "s" or userInput == "e" or userInput == "w":
-        pass
+        """
+        Changing rooms works, but this is a WIP and needs clean up!
+        """
+        room = ''
+
+        if userInput == "n":
+            room = player.current_room.n_to
+        elif userInput == "s":
+            room = player.current_room.s_to
+        elif userInput == "e":
+            room = player.current_room.e_to
+        else:
+            room = player.current_room.w_to
+
+        if room != "" and player.current_room != room:
+            player.current_room = room
+        else:
+            print("No rooms that way!")
     else:
         # Print an error message if the movement isn't allowed.
         print("Please enter a valid cardinal direction")
